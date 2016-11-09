@@ -103,7 +103,6 @@ EOF
         } else {
             list($datasetId, $tableId) = explode('.', $fullTableName);
         }
-
         $builder = new ServiceBuilder([
             'projectId' => $projectId,
         ]);

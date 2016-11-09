@@ -34,11 +34,6 @@ use Google\Cloud\ServiceBuilder;
  */
 function insert_sql($projectId, $datasetId, $source)
 {
-    // determine the import options from the file extension
-    $pathInfo = pathinfo($source) + ['extension' => null];
-    if ('sql' != $pathInfo['extension']) {
-        throw new InvalidArgumentException('Source format must be SQL.');
-    }
     // instantiate the bigquery table service
     $builder = new ServiceBuilder([
         'projectId' => $projectId,
