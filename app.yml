@@ -1,0 +1,22 @@
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /
+  script: home.php
+
+- url: /api/.*
+  script: storage.php
+  
+- url: /api/src/.*
+  script: BucketAclCommand.php
+  script: BucketDefaultAclCommand.php
+  script: BucketsCommand.php
+  script: EncryptionCommand.php
+  script: ObjectAclCommand.php
+  script: ObjectsCommand.php
+
+  - url: /api/src/functions/.*
+  script: upload_object.php
+  script: bucket_list.php
+  script: list_objects.php
